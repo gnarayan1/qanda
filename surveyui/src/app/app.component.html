@@ -7,8 +7,11 @@
 </div>
 <h2>Please answer the following questions: </h2>
 <ul>
-  <li *ngFor="let question of questions">
+  <li *ngFor="let question of questions;let i = index;">
     <h2>{{question}}</h2>
+    <h3>Comments:</h3><textarea rows="4" cols="50" required [(ngModel)]="answers[i].comment"></textarea>
+    <h4>Rating:</h4><ngb-rating [(rate)]="answers[i].rating"></ngb-rating>
+    <br/><hr/><br/>
   </li>
 </ul>
 
