@@ -26,12 +26,20 @@ export class AppComponent implements OnInit {
       for (var question of data['_embedded']['questions']) {
         this.questions.push(question.text);
         const qIdHref = question._links.self.href;
-        const qId = qIdHref.substring(qIdHref.lastIndexOf('/'));
+        const qId = qIdHref.substring(qIdHref.lastIndexOf('/')+1);
         const canswer = {'questionId': qId, 'rating': this.currentRate, comment: ''  };
         this.answers.push(canswer);
-        console.log(canswer);     
+        //console.log(canswer);     
       }
       
     });
   }
+
+  submitAnswers() : void {
+      //console.log(this.answers);
+      this.http.post('/answers/many', this.answers).subscribe(data => {
+        console.log(data);
+      });
+  }
+
 }

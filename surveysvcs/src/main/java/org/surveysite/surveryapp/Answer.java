@@ -7,7 +7,7 @@ public class Answer {
 	@Id private String id;
 	
 	private String comment;
-	private int value;
+	private int rating;
 	private String questionId;
 	
 	
@@ -23,11 +23,11 @@ public class Answer {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	public int getValue() {
-		return value;
+	public int getRating() {
+		return rating;
 	}
-	public void setValue(int value) {
-		this.value = value;
+	public void setTating(int rating) {
+		this.rating = rating;
 	}
 	
 		
