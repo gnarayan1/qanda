@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Cognizant Logo" src="https://www.cognizant.com/content/dam/Cognizant_Dotcom/images/cog-logo.svg">
+</div>
+<h2>Please answer the following questions: </h2>
+<ul>
+  <li *ngFor="let question of questions">
+    <h2>{{question}}</h2>
+  </li>
+</ul>
+
